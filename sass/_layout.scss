@@ -1,0 +1,108 @@
+.container {
+    max-width: 120rem;
+    margin: 8rem auto;
+    background-color: var(--color-grey-light-1);
+    box-shadow: var(--shadow-dark);
+
+    min-height: 50rem;
+
+    @media only screen and (max-width: $bp-largest) {
+        margin: 0;
+        max-width: 100%;
+        width: 100%;
+    }
+
+}
+
+.header {
+    font-size: 1.4rem;
+    height: 7rem;
+    background-color: #fff;
+    border-bottom: var(--border-bottom);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @media only screen and (max-width: $bp-smallest) {
+        flex-wrap: wrap; // Now we're allowing the flex items to wrap into a new line if they don't have enough space in the flex container
+        align-content: space-around;
+        height: 11rem;
+    }
+}
+
+.content {
+    display: flex;
+
+    @media only screen and (max-width: $bp-medium) {
+        flex-direction: column;
+    }
+}
+
+.sidebar {
+    background-color: var(--color-grey-dark-1);
+
+    flex: 0 0 18%; // 0 for grow (if there some white space), 0 for shrink (if there's not enough space), and 18% for the width of the flex item itself; ans also remember that flex = flex-basis;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.hotel-view {
+    background-color: #fff;
+    
+    flex: 1; // 1 means thath the item should grow as much as it can and that we also allow it to grow, occupying the whole space left after the fitst item (which is sidebar)
+}
+
+.detail {
+    display: flex;
+    padding: 4.5rem;
+    background-color: var(--color-grey-light-1);
+    border-bottom: var(--border-bottom);
+    font-size: 1.4rem;
+
+    @media only screen and (max-width: $bp-medium) {
+        padding: 3rem;
+    }
+
+    @media only screen and (max-width: $bp-small) {
+        flex-direction: column;
+    }
+
+    @media only screen and (max-width: $bp-smallest) {
+        padding: 1.75rem;
+    }
+}
+
+.description {
+    background-color: #fff;
+    box-shadow: var(--shadow-light);
+    border-radius: 2px;
+    padding: 3rem;
+    flex: 0 0 60%;
+    margin-right: 4.5rem;
+
+    @media only screen and (max-width: $bp-medium) {
+        padding: 2rem;
+        margin-right: 3rem;
+    }
+
+    @media only screen and (max-width: $bp-small) {
+        margin-right: 0;
+        margin-bottom: 3rem;
+    }
+
+    @media only screen and (max-width: $bp-smallest) {
+        margin-bottom: 1.75rem;
+    }
+}
+
+.user-reviews {
+    //background-color: transparent;
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
